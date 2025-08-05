@@ -26,3 +26,9 @@
     img2.style.transform = `scale(${scale})`;
   });
 
+  const scrollText = document.getElementById('scrollText');
+
+  window.addEventListener('scroll', () => {
+    const offset = window.scrollY;
+    scrollText.style.transform = `translateY(${offset * 0.2}px)`;
+  });
