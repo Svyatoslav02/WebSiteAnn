@@ -6,7 +6,6 @@
     const section1 = document.getElementById('section1');
     const section2 = document.getElementById('section2');
     const section3 = document.getElementById('section3');
-    const section4 = document.getElementById('section4');
     const img2 = document.querySelector('.img2');
 
     const maxScroll = vh;
