@@ -51,7 +51,11 @@ app.post('/api/contact', async (req, res) => {
         from: process.env.EMAIL_FROM || process.env.SMTP_USER,
         to: process.env.EMAIL_TO,
         subject: 'New contact form submission',
-        text
+        text: `Email: ${email}
+Name: ${name}
+Service: ${service}
+Budget: ${budget}
+Message: ${message}`
       });
     }
   } catch (err) {
