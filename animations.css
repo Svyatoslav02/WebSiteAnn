@@ -1,0 +1,69 @@
+/* animations for footer social buttons (moved from inline in aboutPage.html) */
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.social-button2{
+  opacity: 0;
+  transform: translateY(8px);
+  animation: fadeInUp 420ms ease forwards;
+  animation-delay: 120ms;
+  transition: transform 220ms ease, box-shadow 220ms ease, background 220ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 14px;
+  border-radius: 28px;
+  cursor: pointer;
+  will-change: transform;
+  /* when .social-button2 is an anchor (full-bar link) remove underline and inherit color */
+  text-decoration: none;
+  color: inherit;
+}
+
+.social-button2:hover,
+.social-button2:focus-within{
+  transform: translateY(-6px);
+  box-shadow: 0 14px 30px rgba(6,6,6,0.28);
+  background: linear-gradient(90deg, rgba(30,30,30,1), rgba(16,16,16,1));
+}
+
+.social-button2 .text{
+  transition: transform 220ms ease, color 220ms ease;
+  display: inline-block;
+  color: #ddd;
+}
+.social-button2:hover .text{
+  transform: translateX(6px);
+  color: #fff;
+}
+
+.arrow2{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.04);
+  transition: transform 240ms cubic-bezier(.2,.9,.3,1), background 240ms ease;
+  margin-left: 10px;
+  color: #fff;
+  font-size: 12px;
+}
+.social-button2:hover .arrow2{
+  transform: translateX(6px);
+  background: rgba(255,255,255,0.10);
+}
+
+.social-button2 a:focus{
+  outline: 2px solid rgba(255,255,255,0.12);
+  outline-offset: 3px;
+}
+
+@media (max-width:640px){
+  .social-button2{ padding:8px 10px; }
+  .arrow2{ width:32px; height:32px; }
+}

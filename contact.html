@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLAnn</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="animations.css">
+    <style>
+        /* Make select dropdown dark to match site */
+        select.field {
+            background: #111;
+            color: #fff;
+            border: 1px solid rgba(255,255,255,0.08);
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            padding: 10px 12px;
+        }
+        select.field option[disabled] {
+            color: #999;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header class="flex">
+        <div class="logo">
+            <a class="a1" href="index.html"><img class="img1" src="updateImages/LOGP white PLAN.png" alt="logo"></a>
+        </div>
+        <div>
+            <nav>
+                <ul class="flex">
+                    <li><a href="index.html">Home
+                            <hr>
+                        </a></li>
+                    <li><a href="aboutPage.html">About
+                            <hr>
+                        </a></li>
+                    <li><a href="projectsPage.html">Portfolio
+                            <hr>
+                        </a></li>
+                    <li><a href="services.html">Services
+                            <hr>
+                        </a></li>
+                        <li><a href="PricingPage.html">Pricing
+                            <hr>
+                        </a></li>
+                    <li><a class="menu1" href="contact.html">Contact
+                            <hr class="h1">
+                        </a></li>
+                </ul>
+            </nav>
+        </div>
+        <div>
+            <a class="a2" href="contact.html">
+                <button id="btn1">Get in touch</button>
+            </a>
+        </div>
+    </header>
+    <main>
+        <video id="video-bg" autoplay muted loop>
+            <source src="2421595_Computerized_Animation_3840x2160.mov" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <section id="section12">
+            <h1 class="h1sec12">Contact Me</h1>
+            <p class="p9">I love hearing from you!
+                Whether you’re ready to discuss your next project, have a question, or just want to say hi — I’m always
+                open to talk.
+                My goal is to make your experience working with me as smooth and inspiring as possible.
+                Drop me a message, and let’s start creating together!</p>
+            <button class="scroll-button">SCROLL -</button>
+        </section>
+        <section class="section-wrap">
+            <div class="panel">
+
+                <!-- Лівий блок -->
+                <div class="left">
+
+                    <h2 class="head">Ready to get started?</h2>
+
+                    <!-- години -->
+                    <div class="contact-item">
+                        <div class="icon-wrap" aria-hidden="true">
+                            <!-- svg годинника -->
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6" fill="none" />
+                                <path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"
+                                    stroke-linejoin="round" fill="none" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div style="color:var(--text); font-weight:500; margin-bottom:6px;">Mon–Fr 09:00–21:00</div>
+                            <div style="color:var(--muted); font-size:14px;">Sat–Sun 10:00–18:00</div>
+                        </div>
+                    </div>
+
+                    <!-- email -->
+                    <div class="contact-item">
+                        <div class="icon-wrap" aria-hidden="true">
+                            <!-- svg конверта -->
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 7.5v9a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-9" stroke="currentColor"
+                                    stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                                <path d="M21 7.5L12 13 3 7.5" stroke="currentColor" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" fill="none" />
+                            </svg>
+                        </div>
+                        <div style="display:flex;flex-direction:column;">
+                            <a href="mailto:annapytsko@gmail.com" style="font-weight:500;">annapytsko@gmail.com</a>
+                            <div style="color:var(--muted); font-size:14px; margin-top:6px;">You’ll usually hear back
+                                within
+                                1–2 business days</div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Правий блок (форма) -->
+                <div class="right">
+                    <p class="lead">
+                        Fill out the form, choose the service you want, and let's bring your vision to life. Don't be
+                        shy —
+                        I'm here to help!
+                    </p>
+
+                    <form id="contact-form" aria-label="Contact form">
+
+                        <div class="row">
+                            <input class="field" type="email" placeholder="your.email@example.com" required />
+                            <input class="field" type="text" placeholder="Your name" />
+                        </div>
+
+                        <div class="row">
+                            <select class="field" name="service" aria-label="Which service do you need?">
+                                <option value="" disabled selected>Select a service</option>
+                                <option value="Brand Identity">Brand Identity</option>
+                                <option value="Website Design">Website Design</option>
+                                <option value="Social Media Content">Social Media Content</option>
+                            </select>
+                            <input class="field" type="text" placeholder="Your budget range (approximate)" />
+                        </div>
+
+                        <div class="textarea-wrap" style="margin-bottom:8px;">
+                            <textarea class="textarea"
+                                placeholder="Tell me about your project — what you need / style / details"></textarea>
+                            <!-- невеликий значок в кутку textarea -->
+                            <svg class="textarea-resize-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 21L21 3" stroke="rgba(255,255,255,0.35)" stroke-width="1.6"
+                                    stroke-linecap="round" />
+                                <path d="M14 3h4v4" stroke="rgba(255,255,255,0.35)" stroke-width="1.6"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </div>
+
+                        <div class="form-footer">
+                            <button class="btn" type="submit">Get in touch</button>
+                        </div>
+
+                    </form>
+                    <script>
+                        (function () {
+                            var form = document.getElementById('contact-form');
+                            if (!form) return;
+                            form.addEventListener('submit', function (e) {
+                                e.preventDefault();
+                                var data = {
+                                    email: (form.querySelector('input[type="email"]') || {}).value || '',
+                                    name: (form.querySelector('input[placeholder="Your name"]') || {}).value || '',
+                                    service: (form.querySelector('select[name="service"]') || {}).value || (form.querySelector('input[placeholder="Which service do you need?"]') || {}).value || '',
+                                    budget: (form.querySelector('input[placeholder="Your budget range (approximate)"]') || {}).value || '',
+                                    message: (form.querySelector('textarea') || {}).value || ''
+                                };
+
+                                fetch('/api/contact', {
+                                    method: 'POST',
+                                    headers: { 'Content-Type': 'application/json' },
+                                    body: JSON.stringify(data)
+                                }).then(function (res) {
+                                    return res.json();
+                                }).then(function (json) {
+                                    alert(json.message || 'Sent');
+                                    form.reset();
+                                }).catch(function (err) {
+                                    alert('Error sending message');
+                                    console.error(err);
+                                });
+                            });
+                        })();
+                    </script>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="section10" class="striped-section">
+            <h1>Frequently Asked Questions (FAQs)</h1>
+            <p class="p7">Find answers to common questions clients ask before working with me.</p>
+            <div class="sec9siv">
+                <div class="faq-item faq-item-duration" id="faq-duration">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false"
+                        aria-controls="faq-duration-answer" id="faq-duration-trigger">
+                        <span class="faq-question-text">What is the typical duration for completing a project?</span>
+                        <span class="btn71" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="faq-answer" id="faq-duration-answer" aria-hidden="true">
+                        <p>Project timelines vary based on the scope and complexity:<br>
+                            Smaller projects — like a logo, banner, or simple landing page — typically take 1–2
+                            weeks<br>
+                            Medium to large projects — such as a full website or complete branding package — take around
+                            3–5 weeks or more
+                            Once I learn more about your needs, I’ll provide a tailored timeline with clear milestones.
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-2">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-2-answer">
+                        <span class="faq-question-text">What are the typical costs associated with a design
+                            project?</span>
+                        <span class="btn71" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="faq-answer" id="faq-2-answer" aria-hidden="true">
+                        <p>Prices are based on project size, deliverables, and technical needs. Here are some starting
+                            points for freelance design work in Europe:<br>
+                            Logo design — from €100<br>
+                            Mini branding package (logo, color palette, typography) — from €200–400<br>
+                            Website UI/UX design (up to 5 pages) — from €400–700<br>
+                            Design + Webflow development — from €700–1200<br>
+                            💳 Payment is split into two parts: 50% upfront, and 50% after project completion and
+                            approval.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-3">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-3-answer">
+                        <span class="faq-question-text">What is the typical duration for completing a project?</span>
+                        <span class="btn71" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="faq-answer" id="faq-3-answer" aria-hidden="true">
+                        <p>My workflow is collaborative, clear, and structured. Here’s what to expect:<br>
+                            Discovery / Briefing — we define your goals, audience, style, and needs<br>
+                            Concept development — I create initial directions or UI mockups<br>
+                            Feedback & iteration — we refine the design together based on your input<br>
+                            Final design — I deliver the final versions in high-quality formats<br>
+                            (Optional) Webflow development — I turn the designs into a fully responsive, live site<br>
+                            Handoff & support — you get all files, guides, and (if needed) a short video tutorial.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-4">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-4-answer">
+                        <span class="faq-question-text">How involved will I be during the project?</span>
+                        <span class="btn71" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="faq-answer" id="faq-4-answer" aria-hidden="true">
+                        <p>Your input is important and valued at key stages:<br>
+                            You’ll provide direction at the start (briefing)<br>
+                            I’ll update you regularly and request feedback during revisions<br>
+                            You’ll approve final versions before delivery<br>
+                            I aim to make the process smooth and low-stress while keeping you in creative control.</p>
+                    </div>
+                </div>
+                <div class="faq-item" id="faq-5">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-5-answer">
+                        <span class="faq-question-text">Which languages can we work in?</span>
+                        <span class="btn71" aria-hidden="true">&#9662;</span>
+                    </button>
+                    <div class="faq-answer" id="faq-5-answer" aria-hidden="true">
+                        <p>Which languages can we work in? I work in English, Ukrainian, and Polish — feel free to
+                            communicate in whichever is most comfortable for you.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="section11">
+            <div class="sliider-wrapper">
+                <div class="sliider-track">
+                    <div class="sliide">Brand</div>
+                    <div class="sliide">Print</div>
+                    <div class="sliide">Digital</div>
+                    <div class="sliide">Product</div>
+                    <div class="sliide">Brand</div>
+                    <div class="sliide">Print</div>
+                    <div class="sliide">Digital</div>
+                    <div class="sliide">Product</div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <!--
+      <footer id="footer1">
+        <div class="wrap">
+            <img class="img8" src="images/logo02.png" alt="logo" width="100px">
+            <div class="flex clll">
+                <div>
+                    <div class="div1foo">
+                        <div>
+                            <p class="p7"><b>Email</b>: annapytsko@.com</p>
+                            <p class="p7"><b>Available</b>: Mon-Fr 09:00-21:00 Sat-Sun 10:00-18:00</p>
+                            <p class="p7">Other times – by request</p>
+                            <div class="div2foo">
+                                <p class="p7">Subscribe to my newsletter</p>
+                                <div>
+                                    <input class="inputfoo" type="email" placeholder="name@email.com">
+                                    <button class="btn88">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="social-button2">
+                            <div class="icon-text2">
+                                <span class="text">Telegram</span>
+                            </div>
+                            <span class="arrow2">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="social-button2">
+                            <div class="icon-text2">
+                                <span class="text">Instagram</span>
+                            </div>
+                            <span class="arrow2">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <div class="div1foo lifoo flex">
+                        <div>
+                            <h1>Quick Links</h1>
+                            <ul class="lifoo">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">PORTFOLIO</a></li>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1>Legal</h1>
+                            <ul>
+                                <li><a href="#">Connect with me</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="social-button2">
+                            <div class="icon-text2">
+                                <span class="text">Telegram</span>
+                            </div>
+                            <span class="arrow2">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                        <div class="social-button2">
+                            <div class="icon-text2">
+                                <span class="text">Instagram</span>
+                            </div>
+                            <span class="arrow2">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="div3foo">
+                <p class="p7">© 2025 www.planndesign.com</p>
+                <p class="p7">Design by PLAnn</p>
+            </div>
+        </div>
+    </footer>
+-->
+    <footer id="footer1">
+        <div class="wrap">
+            <img class="img8" src="images/logo02.png" alt="logo" width="100px">
+            <div class="flex clll">
+                <div>
+                    <div class="div1foo">
+                        <div>
+                            <p class="p7"><b>Email</b>: annapytsko@.com</p>
+                            <p class="p7"><b>Available</b>: Mon-Fr 09:00-21:00 Sat-Sun 10:00-18:00</p>
+                            <p class="p7">Other times – by request</p>
+                            <div class="div2foo">
+                                <p class="p7">Subscribe to my newsletter</p>
+                                <div>
+                                    <input class="inputfoo" type="email" placeholder="name@email.com">
+                                    <button class="btn88">Subscribe</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="social-button2" href="https://t.me/pl_annetka" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="icon-text2">
+                                <span class="text">Telegram</span>
+                            </div>
+                            <span class="arrow2" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                        <a class="social-button2"
+                            href="https://www.instagram.com/plann_design_?igsh=MWppOHN3NXZ2c3ZhMQ==" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="icon-text2">
+                                <span class="text">Instagram</span>
+                            </div>
+                            <span class="arrow2" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <div class="div1foo lifoo flex">
+                        <div>
+                            <h1>Quick Links</h1>
+                            <ul class="lifoo">
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">PORTFOLIO</a></li>
+                                <li><a href="#">ABOUT</a></li>
+                                <li><a href="#">Services</a></li>
+                                <li><a href="#">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h1>Legal</h1>
+                            <ul>
+                                <li><a href="#">Connect with me</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms & Conditions</a></li>
+                                <li><a href="#">Refund Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div>
+                        <a class="social-button2" href="https://www.tiktok.com/@pl_annetka?_r=1&_t=ZN-92R20tiRhYc"
+                            target="_blank" rel="noopener noreferrer">
+                            <div class="icon-text2">
+                                <span class="text">TikTok</span>
+                            </div>
+                            <span class="arrow2" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                        <a class="social-button2" href="https://www.behance.net/pl_annetka" target="_blank"
+                            rel="noopener noreferrer">
+                            <div class="icon-text2">
+                                <span class="text">BEHANCE</span>
+                            </div>
+                            <span class="arrow2" aria-hidden="true">
+                                <i class="fas fa-arrow-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="div3foo">
+                <p class="p7">© 2025 www.planndesign.com</p>
+                <p class="p7">Design by PLAnn</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var container = document.querySelector('#section10 .sec9siv');
+            if (!container) return;
+            var triggers = container.querySelectorAll('.faq-trigger');
+            triggers.forEach(function (trigger) {
+                var faqItem = trigger.closest('.faq-item');
+                var answer = faqItem ? faqItem.querySelector('.faq-answer') : null;
+                if (!faqItem || !answer) return;
+                trigger.addEventListener('click', function () {
+                    var isExpanded = faqItem.classList.toggle('expanded');
+                    trigger.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+                    answer.setAttribute('aria-hidden', isExpanded ? 'false' : 'true');
+                    document.querySelectorAll('#section10 .faq-item.expanded').forEach(function (other) {
+                        if (other !== faqItem) {
+                            other.classList.remove('expanded');
+                            var t = other.querySelector('.faq-trigger');
+                            var a = other.querySelector('.faq-answer');
+                            if (t) t.setAttribute('aria-expanded', 'false');
+                            if (a) a.setAttribute('aria-hidden', 'true');
+                        }
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
