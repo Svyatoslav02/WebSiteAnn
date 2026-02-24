@@ -12,7 +12,6 @@ app.post('/api/contact', async (req, res) => {
   const { email, name, service, budget, message } = req.body || {};
   if (!email && !name && !message) return res.status(400).json({ message: 'Missing fields' });
 
-  // Build a safe HTML-formatted message for Telegram
   function escapeHtml(str) {
     if (!str && str !== 0) return '';
     return String(str)
@@ -23,7 +22,6 @@ app.post('/api/contact', async (req, res) => {
 
   const messageHtml = `&lt;b&gt;New contact form submission&lt;/b&gt;\n\n&lt;b&gt;Email:&lt;/b&gt; ${escapeHtml(email)}\n&lt;b&gt;Name:&lt;/b&gt; ${escapeHtml(name)}\n&lt;b&gt;Service:&lt;/b&gt; ${escapeHtml(service)}\n&lt;b&gt;Budget:&lt;/b&gt; ${escapeHtml(budget)}\n&lt;b&gt;Message:&lt;/b&gt;\n${escapeHtml(message)}`;
 
-  // Send Telegram message (if configured)
   try {
     if (process.env.TG_BOT_TOKEN && process.env.TG_CHAT_ID) {
       const tgUrl = `https://api.telegram.org/bot${process.env.TG_BOT_TOKEN}/sendMessage`;
@@ -37,7 +35,6 @@ app.post('/api/contact', async (req, res) => {
     console.error('Telegram error', err);
   }
 
-  // Send email via SMTP (if configured)
   try {
     if (process.env.SMTP_HOST && process.env.EMAIL_TO) {
       const transporter = nodemailer.createTransport({
