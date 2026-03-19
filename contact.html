@@ -180,7 +180,7 @@
                                     message: (form.querySelector('textarea') || {}).value || ''
                                 };
 
-                                fetch('/api/contact', {
+                                fetch('/.netlify/functions/contact', {
                                     method: 'POST',
                                     headers: { 'Content-Type': 'application/json' },
                                     body: JSON.stringify(data)
