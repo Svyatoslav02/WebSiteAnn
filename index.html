@@ -125,9 +125,7 @@
                 <button id="btn4" class="custom-btn"><span>View All Projects</span></button>
             </div>
             <div class="portfolio-carousel-wrap">
-                <button type="button" class="portfolio-arrow portfolio-arrow-left" id="portfolioArrowLeft" aria-label="Previous slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
-                </button>
+
                 <div id="slider2" class="portfolio-slider-viewport">
                     <div class="slider-track2" id="portfolioTrack">
                         <div class="slide2">
@@ -152,9 +150,7 @@
                         <span>VIEW</span>
                     </div>
                 </div>
-                <button type="button" class="portfolio-arrow portfolio-arrow-right" id="portfolioArrowRight" aria-label="Next slide">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                </button>
+
             </div>
         </section>
 
@@ -391,10 +387,12 @@
         </section>
 
         <section id="section7" class="flex striped-section">
-            <div>
+            <div style="display: flex; flex-direction: column;">
                 <h1 class="h1sec7">Approach</h1>
                 <p class="p5">From idea to outcome I take care of every step!</p>
-                <button id="btn5" class="custom-btn"><span>Get in touch</span></button>
+                <div style="margin-top: 1400px;">
+                    <button id="btn5" class="custom-btn"><span>Get in touch</span></button>
+                </div>
             </div>
             <div>
                 <div class="div1sec7">
@@ -533,54 +531,64 @@
                 </div>
             </div>
         </section>
-        <section id="section8" class="portfolio-grid">
+        <section id="section8">
+            <div class="section8-header">
+                <h2>Selected Works</h2>
+                <p>PLAnn — Your Visual Architect of Ideas</p>
+            </div>
 
-            <div class="portfolio-item">
-                <p>Corporate Videos</p>
-                <img src="selected/DOMINO.png" alt="Corporate Videos">
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
+            <div class="portfolio-grid">
+                <div class="portfolio-item">
+                    <p>Corporate Videos</p>
+                    <img src="selected/DOMINO.png" alt="Corporate Videos">
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item">
+                    <img src="selected/mind.png" alt="Documentaries">
+                    <p>Documentaries</p>
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item tall">
+                    <img src="selected/prezentacja-etykiety-win-Vinex-1.png" alt="Shorts & Reels">
+                    <p>Shorts & Reels</p>
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
+                </div>
+                <div class="portfolio-item wide">
+                    <img src="selected/photo_2024-05-10_19-54-19.jpg" alt="Event and Live Streaming">
+                    <p>Event and Live Streaming</p>
+
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item item2">
+                    <img src="selected/prezentacja-etykiety-win-Vinex-1.png" alt="Animation and VFX">
+                    <p>Animation and VFX</p>
+
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
+                </div>
+                <div class="portfolio-item item1 right-block">
+                    <img src="selected/OAAR.png" alt="Commercials and Advertisements">
+                    <p>Commercials and Advertisements</p>
+                    <div class="overlay">
+                        <span class="title">feature films, documentaries, and other long-form video content</span>
+                    </div>
                 </div>
             </div>
 
-            <div class="portfolio-item">
-                <img src="selected/mind.png" alt="Documentaries">
-                <p>Documentaries</p>
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
-                </div>
-            </div>
-
-            <div class="portfolio-item tall">
-                <img src="selected/prezentacja-etykiety-win-Vinex-1.png" alt="Shorts & Reels">
-                <p>Shorts & Reels</p>
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
-                </div>
-            </div>
-            <div class="portfolio-item wide">
-                <img src="selected/photo_2024-05-10_19-54-19.jpg" alt="Event and Live Streaming">
-                <p>Event and Live Streaming</p>
-
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
-                </div>
-            </div>
-
-            <div class="portfolio-item item2">
-                <img src="selected/prezentacja-etykiety-win-Vinex-1.png" alt="Animation and VFX">
-                <p>Animation and VFX</p>
-
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
-                </div>
-            </div>
-            <div class="portfolio-item item1 right-block">
-                <img src="selected/OAAR.png" alt="Commercials and Advertisements">
-                <p>Commercials and Advertisements</p>
-                <div class="overlay">
-                    <span class="title">feature films, documentaries, and other long-form video content</span>
-                </div>
+            <div class="section8-footer">
+                <button id="btn5" class="custom-btn"><span>Explore All Works</span></button>
             </div>
         </section>
 
@@ -605,7 +613,7 @@
                     </div>
                     <div class="slide">
                         <div class="div1sec9">
-                                <img class="smile" src="images/image-removebg-preview.png" alt="smile">
+                            <img class="smile" src="images/image-removebg-preview.png" alt="smile">
                             <h1 class="h2sec9">Our experience with CreativeEdge Productions was outstanding! Their
                                 team's relaxed and
                                 patient approach, along with the creation of a delightful atmosphere, led to the
@@ -617,7 +625,7 @@
                     </div>
                     <div class="slide">
                         <div class="div1sec9">
-                                <img class="smile" src="images/image-removebg-preview.png" alt="smile">
+                            <img class="smile" src="images/image-removebg-preview.png" alt="smile">
                             <h1 class="h2sec9">After a year of working on various projects with CreativeEdge, I'm
                                 consistently amazed by their professionalism, commitment, and extensive knowledge in the
                                 film and video industry. Keep it up!</h1>
@@ -649,29 +657,36 @@
             <p class="p7">Find answers to common questions clients ask before working with me.</p>
             <div class="sec9siv">
                 <div class="faq-item faq-item-duration" id="faq-duration">
-                    <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-duration-answer" id="faq-duration-trigger">
+                    <button type="button" class="btn7 faq-trigger" aria-expanded="false"
+                        aria-controls="faq-duration-answer" id="faq-duration-trigger">
                         <span class="faq-question-text">What is the typical duration for completing a project?</span>
                         <span class="btn71" aria-hidden="true">&#9662;</span>
                     </button>
                     <div class="faq-answer" id="faq-duration-answer" aria-hidden="true">
                         <p>Project timelines vary based on the scope and complexity:<br>
-                            Smaller projects — like a logo, banner, or simple landing page — typically take 1–2 weeks<br>
-                            Medium to large projects — such as a full website or complete branding package — take around 3–5 weeks or more
-                            Once I learn more about your needs, I’ll provide a tailored timeline with clear milestones.</p>
+                            Smaller projects — like a logo, banner, or simple landing page — typically take 1–2
+                            weeks<br>
+                            Medium to large projects — such as a full website or complete branding package — take around
+                            3–5 weeks or more
+                            Once I learn more about your needs, I’ll provide a tailored timeline with clear milestones.
+                        </p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq-2">
                     <button type="button" class="btn7 faq-trigger" aria-expanded="false" aria-controls="faq-2-answer">
-                        <span class="faq-question-text">What are the typical costs associated with a design project?</span>
+                        <span class="faq-question-text">What are the typical costs associated with a design
+                            project?</span>
                         <span class="btn71" aria-hidden="true">&#9662;</span>
                     </button>
                     <div class="faq-answer" id="faq-2-answer" aria-hidden="true">
-                        <p>Prices are based on project size, deliverables, and technical needs. Here are some starting points for freelance design work in Europe:<br>
+                        <p>Prices are based on project size, deliverables, and technical needs. Here are some starting
+                            points for freelance design work in Europe:<br>
                             Logo design — from €100<br>
                             Mini branding package (logo, color palette, typography) — from €200–400<br>
                             Website UI/UX design (up to 5 pages) — from €400–700<br>
                             Design + Webflow development — from €700–1200<br>
-                            💳 Payment is split into two parts: 50% upfront, and 50% after project completion and approval.</p>
+                            💳 Payment is split into two parts: 50% upfront, and 50% after project completion and
+                            approval.</p>
                     </div>
                 </div>
                 <div class="faq-item" id="faq-3">
@@ -708,7 +723,8 @@
                         <span class="btn71" aria-hidden="true">&#9662;</span>
                     </button>
                     <div class="faq-answer" id="faq-5-answer" aria-hidden="true">
-                        <p>Which languages can we work in? I work in English, Ukrainian, and Polish — feel free to communicate in whichever is most comfortable for you.</p>
+                        <p>Which languages can we work in? I work in English, Ukrainian, and Polish — feel free to
+                            communicate in whichever is most comfortable for you.</p>
                     </div>
                 </div>
             </div>
@@ -732,7 +748,7 @@
 
     <footer id="footer1">
         <div class="wrap">
-            <img class="img8" src="images/logo02.png" alt="logo" width="100px">
+            <img class="img8" src="images/2LOGP PLAN-03 (3).png" alt="logo" width="300px">
             <div class="flex clll">
                 <div>
                     <div class="div1foo">
@@ -816,7 +832,7 @@
                 </div>
             </div>
             <div class="div3foo">
-                <p class="p7">© 2025 www.planndesign.com</p>
+                <p class="p7">© 2026 www.planndesign.com</p>
                 <p class="p7">Design by PLAnn</p>
             </div>
         </div>

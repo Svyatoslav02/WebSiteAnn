@@ -293,10 +293,8 @@ document.addEventListener('click', (e) => {
   const section = document.getElementById('section5');
   const slider = document.getElementById('slider2');
   const track = document.getElementById('portfolioTrack');
-  const arrowLeft = document.getElementById('portfolioArrowLeft');
-  const arrowRight = document.getElementById('portfolioArrowRight');
   const customCursor = document.getElementById('portfolioCursor');
-  if (!section || !slider || !track || !arrowLeft || !arrowRight) return;
+  if (!section || !slider || !track) return;
 
   const gap = 30;
   const autoScrollSpeedPxPerMs = 0.06; // ~60px per second
@@ -319,7 +317,7 @@ document.addEventListener('click', (e) => {
       try {
         video.pause();
         video.currentTime = 0;
-      } catch (err) {}
+      } catch (err) { }
 
       video.addEventListener('mouseenter', function () {
         videos.forEach(function (v) {
@@ -327,19 +325,19 @@ document.addEventListener('click', (e) => {
           try {
             v.pause();
             v.currentTime = 0;
-          } catch (err) {}
+          } catch (err) { }
         });
         try {
           video.currentTime = 0;
           video.play();
-        } catch (err) {}
+        } catch (err) { }
       });
 
       video.addEventListener('mouseleave', function () {
         try {
           video.pause();
           video.currentTime = 0;
-        } catch (err) {}
+        } catch (err) { }
       });
     });
   }
@@ -396,22 +394,22 @@ document.addEventListener('click', (e) => {
     isPaused = true;
     if (resumeTimeout) clearTimeout(resumeTimeout);
     resumeTimeout = setTimeout(function () {
-    resumeTimeout = null;
-    isPaused = false;
+      resumeTimeout = null;
+      isPaused = false;
     }, resumeDelayMs);
   }
 
   function autoScrollStep(timestamp) {
     if (!isInView || isPaused) {
-    rafId = null;
-    return;
+      rafId = null;
+      return;
     }
     const delta = lastTime ? Math.min(timestamp - lastTime, 50) : 16;
     lastTime = timestamp;
     oneSetWidth = getSlideStepPx() * slideCount;
     if (oneSetWidth <= 0) {
-    rafId = requestAnimationFrame(autoScrollStep);
-    return;
+      rafId = requestAnimationFrame(autoScrollStep);
+      return;
     }
     currentTranslate -= autoScrollSpeedPxPerMs * delta;
     if (currentTranslate <= -oneSetWidth) currentTranslate += oneSetWidth;
@@ -426,31 +424,34 @@ document.addEventListener('click', (e) => {
 
   function stopAutoScroll() {
     if (rafId) {
-    cancelAnimationFrame(rafId);
-    rafId = null;
+      cancelAnimationFrame(rafId);
+      rafId = null;
     }
   }
 
   const observer = new IntersectionObserver(
     function (entries) {
-    entries.forEach(function (entry) {
-      isInView = entry.isIntersecting;
-      if (isInView && !isPaused) startAutoScroll();
-      else {
-        stopAutoScroll();
-        lockMode = null;
-      }
-    });
+      entries.forEach(function (entry) {
+        isInView = entry.isIntersecting;
+        if (isInView && !isPaused) startAutoScroll();
+        else {
+          stopAutoScroll();
+          lockMode = null;
+        }
+      });
     },
     { root: null, rootMargin: '0px', threshold: 0.2 }
   );
   observer.observe(section);
 
-  arrowLeft.addEventListener('click', function () {
-    stepByIndex(-1, true);
-  });
-  arrowRight.addEventListener('click', function () {
-    stepByIndex(1, true);
+  slider.addEventListener('click', function (e) {
+    const rect = slider.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    if (x < rect.width / 2) {
+      stepByIndex(-1, true); // go left
+    } else {
+      stepByIndex(1, true); // go right
+    }
   });
 
   slider.addEventListener('mouseenter', function () {
@@ -465,11 +466,11 @@ document.addEventListener('click', (e) => {
       slider.classList.remove('cursor-visible');
     }
     if (isInView) {
-    resumeTimeout = setTimeout(function () {
-      resumeTimeout = null;
-      isPaused = false;
-      startAutoScroll();
-    }, resumeDelayMs);
+      resumeTimeout = setTimeout(function () {
+        resumeTimeout = null;
+        isPaused = false;
+        startAutoScroll();
+      }, resumeDelayMs);
     }
   });
 
@@ -480,6 +481,11 @@ document.addEventListener('click', (e) => {
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
       customCursor.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+
+      const span = customCursor.querySelector('span');
+      if (span) {
+        span.textContent = x < rect.width / 2 ? 'VIEW' : 'VIEW';
+      }
     });
   }
 
@@ -556,10 +562,10 @@ document.addEventListener('click', (e) => {
       e.stopPropagation();
       const container = btn.closest('.div1sec7');
       if (!container) return;
-  // toggle expanded on the container so revealed text (which is a sibling) affects layout
-  const expanded = container.classList.toggle('expanded');
-  // update aria attribute on the button for accessibility
-  try { btn.setAttribute('aria-expanded', expanded ? 'true' : 'false'); } catch (err) {}
+      // toggle expanded on the container so revealed text (which is a sibling) affects layout
+      const expanded = container.classList.toggle('expanded');
+      // update aria attribute on the button for accessibility
+      try { btn.setAttribute('aria-expanded', expanded ? 'true' : 'false'); } catch (err) { }
     });
   });
 })();
@@ -615,8 +621,50 @@ document.addEventListener('click', (e) => {
     // add/remove helper class for when pointer is active (used by CSS to ensure opacity)
     rev.addEventListener('mouseenter', () => rev.classList.add('pointer-active'));
     rev.addEventListener('mouseleave', () => rev.classList.remove('pointer-active'));
-    rev.addEventListener('touchstart', () => rev.classList.add('pointer-active'), { passive: true });
     rev.addEventListener('touchend', () => rev.classList.remove('pointer-active'));
   });
+})();
+
+// Animated Horizontal Gallery Logic
+(function () {
+  const track = document.querySelector('.gallery-track');
+  let originalCards = document.querySelectorAll('.gallery-card');
+  if (!track || !originalCards.length) return;
+
+  // Clone cards to allow infinite horizontal marquee scrolling
+  originalCards.forEach(card => {
+    track.appendChild(card.cloneNode(true));
+  });
+
+  const allCards = document.querySelectorAll('.gallery-card');
+  const totalOriginal = originalCards.length;
+
+  const animationInterval = 3000; // ms between changing expanded cards
+
+  function expandRandomCards() {
+    // Reset all cards
+    allCards.forEach(card => card.classList.remove('expanded', 'expanded-medium'));
+
+    // Always pick exactly 2 to keep total track width constant against the css flex layout 
+    let expandedIndices = [];
+    while (expandedIndices.length < 2) {
+      const randomIndex = Math.floor(Math.random() * totalOriginal);
+      if (!expandedIndices.includes(randomIndex)) {
+        expandedIndices.push(randomIndex);
+      }
+    }
+
+    // Apply expanded classes to original and its clone to maintain symmetry
+    expandedIndices.forEach((index, i) => {
+      const className = i === 0 ? 'expanded' : 'expanded-medium';
+      allCards[index].classList.add(className);
+      allCards[index + totalOriginal].classList.add(className);
+    });
+  }
+
+  // Initial expansion and loop
+  expandRandomCards();
+  setInterval(expandRandomCards, animationInterval);
+
 })();
 

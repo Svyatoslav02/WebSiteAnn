@@ -39,7 +39,7 @@ app.post('/api/contact', async (req, res) => {
 
   // Send email via SMTP (if configured)
   try {
-    if (process.env.SMTP_HOST && process.env.EMAIL_TO) {
+    if (process.env.SMTP_HOST && email) {
       const transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
         port: Number(process.env.SMTP_PORT) || 587,
@@ -47,11 +47,26 @@ app.post('/api/contact', async (req, res) => {
         auth: process.env.SMTP_USER ? { user: process.env.SMTP_USER, pass: process.env.SMTP_PASS } : undefined
       });
 
+      const emailText = `Hi! Thank you for contacting PLAnn.
+
+To better understand your project and your expectations, please complete a short project brief.
+
+The brief takes about 5–7 minutes and helps collect the key details about your project, style preferences and goals.
+
+You can start here:
+[LINK TO BRIEF]
+
+After reviewing your answers, I will contact you with the next steps, timeline and project details.
+
+Looking forward to learning more about your project!
+— Anna
+PLAnn Design`;
+
       await transporter.sendMail({
         from: process.env.EMAIL_FROM || process.env.SMTP_USER,
-        to: process.env.EMAIL_TO,
-        subject: 'New contact form submission',
-        text
+        to: email,
+        subject: 'Thank you for contacting PLAnn',
+        text: emailText
       });
     }
   } catch (err) {

@@ -39,23 +39,28 @@
   transform: translateX(6px);
   color: #fff;
 }
-
-.arrow2{
+.arrow2 {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.04);
-  transition: transform 240ms cubic-bezier(.2,.9,.3,1), background 240ms ease;
+  transition: transform 0.3s ease;
   margin-left: 10px;
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;
 }
-.social-button2:hover .arrow2{
-  transform: translateX(6px);
-  background: rgba(255,255,255,0.10);
+
+.arrow2 i {
+  display: none !important;
+}
+
+.arrow2::after {
+  content: "→";
+  font-family: inherit;
+}
+
+.social-button2:hover .arrow2 {
+  transform: rotate(-45deg);
 }
 
 .social-button2 a:focus{

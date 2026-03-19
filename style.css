@@ -364,7 +364,7 @@ a:hover {
     height: 10px;
     border-radius: 50%;
     background: radial-gradient(circle at 30% 30%, #ff3f81 0%, #ff0066 50%, #8e2de2 100%);
-    box-shadow: 0 0 0 4px rgba(0,0,0,0.06);
+    box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.06);
 }
 
 /* Make a specific point black when the .black-point class is applied */
@@ -392,10 +392,11 @@ a:hover {
     top: var(--y);
     pointer-events: none;
     transform: translate(-50%, -50%);
-    width: 260px; /* smaller, subtler spotlight */
+    width: 260px;
+    /* smaller, subtler spotlight */
     height: 260px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 30%, rgba(255,255,255,0) 60%);
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.06) 0%, rgba(255, 255, 255, 0.02) 30%, rgba(255, 255, 255, 0) 60%);
     mix-blend-mode: overlay;
     opacity: 0;
     transition: opacity 220ms ease, transform 120ms linear;
@@ -919,7 +920,7 @@ a:hover {
 
 /* Small visual cue when expanded */
 .div1sec7.expanded .h2sec7 {
-    color: #FF7A7A;
+    color: #FF0000;
 }
 
 .modal1-sec6 .slide3 {
@@ -1016,6 +1017,77 @@ a:hover {
     transition:
         transform 0.4s ease,
         border-color 0.3s ease;
+}
+
+/* Projects Top Tags Category Container */
+.tags {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 30px;
+    padding-inline: 15px;
+}
+
+/* Premium Portfolio Filter Button / Tag */
+.tag {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #e0e0e0;
+    background-color: #161616;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 50px;
+    /* Perfect pill shape */
+    cursor: pointer;
+    user-select: none;
+    outline: none;
+
+    /* Smooth, stable hardware-accelerated transitions */
+    transition:
+        color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        background-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        border-color 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        box-shadow 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+        transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+
+    /* Prevent layout shifting from border/glow changes */
+    will-change: padding, border, transform, box-shadow;
+    box-sizing: border-box;
+}
+
+/* Hover State - Smooth Red Glow */
+.tag:hover,
+.tag.active {
+    color: #FF0000;
+    border-color: #FF0000;
+    background-color: rgba(255, 0, 0, 0.05);
+    /* slightly warmer bg */
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.25);
+    /* Subtle glowing red spread */
+    transform: translateY(-2px);
+    /* Slight lift */
+}
+
+/* Active / Clicked State */
+.tag:active {
+    transform: scale(0.95);
+    /* Organic push-down scaling */
+    box-shadow: 0 0 8px rgba(255, 0, 0, 0.4);
+    /* Glow tightens on press */
+    background-color: rgba(255, 0, 0, 0.08);
+    /* Becomes slightly darker */
+    transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1);
+    /* Faster snap down */
+}
+
+/* Accessibility Focus */
+.tag:focus-visible {
+    box-shadow: 0 0 0 2px #000, 0 0 0 4px #FF0000;
 }
 
 /* Коло для іконки */
@@ -1183,10 +1255,12 @@ a:hover {
     padding-left: 18px;
     position: relative;
 }
-.reveal h2{
-        color: #707070;
-        margin-bottom: 20px;
+
+.reveal h2 {
+    color: #707070;
+    margin-bottom: 20px;
 }
+
 .reveal-col li+li {
     margin-top: 0;
     transition: margin-top 400ms cubic-bezier(.2, .9, .2, 1), opacity 320ms ease;
@@ -1498,8 +1572,8 @@ a:hover {
     z-index: 1;
 }
 
-#section10 > h1,
-#section10 > .p7 {
+#section10>h1,
+#section10>.p7 {
     text-align: center;
 }
 
@@ -1690,6 +1764,19 @@ a:hover {
     border-radius: 50%;
     background: #FF0000;
     margin-right: 15px;
+    animation: shrinkPulse 2s ease-in-out infinite;
+}
+
+@keyframes shrinkPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(0.8);
+    }
 }
 
 
@@ -1711,9 +1798,10 @@ a:hover {
 }
 
 .img8 {
-    width: 250px;
-    height: 50px;
-    padding-left: 580px;
+    width: 380px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
     padding-top: 20px;
     padding-bottom: 30px;
 }
@@ -1728,8 +1816,17 @@ a:hover {
     padding: 30px;
 }
 
+.div1foo.lifoo {
+    width: auto;
+    border: 1px solid #858484;
+    gap: 120px;
+    padding: 30px;
+    align-items: flex-start;
+}
+
 .clll {
-    gap: 20px;
+    gap: 80px;
+    width: 100%;
 }
 
 .div2foo {
@@ -1798,6 +1895,21 @@ a:hover {
 
 .arrow2 {
     font-size: 20px;
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.arrow2 i {
+    display: none;
+}
+
+.arrow2::after {
+    content: "→";
+    font-family: "Inter", Arial, sans-serif;
+}
+
+.social-button2:hover .arrow2 {
+    transform: rotate(-45deg);
 }
 
 .div3foo {
@@ -1813,7 +1925,7 @@ a:hover {
 
 .lifoo {
     font-size: 18px;
-    gap: 180px;
+    gap: 260px;
 }
 
 
@@ -2227,14 +2339,12 @@ section.projects {
     top: 50%;
     transform: translateY(-50%);
     border-radius: 8px;
-    background: linear-gradient(
-        180deg,
-        rgba(0, 0, 0, 0) 0%,
-        rgba(0, 0, 0, 0.2) 18%,
-        rgba(0, 0, 0, 0.4) 50%,
-        rgba(0, 0, 0, 0.2) 82%,
-        rgba(0, 0, 0, 0) 100%
-    );
+    background: linear-gradient(180deg,
+            rgba(0, 0, 0, 0) 0%,
+            rgba(0, 0, 0, 0.2) 18%,
+            rgba(0, 0, 0, 0.4) 50%,
+            rgba(0, 0, 0, 0.2) 82%,
+            rgba(0, 0, 0, 0) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     display: flex;
@@ -2284,6 +2394,7 @@ section.projects {
     0% {
         transform: translateX(0);
     }
+
     100% {
         transform: translateX(-50%);
     }
@@ -2361,10 +2472,17 @@ section.projects {
     box-sizing: border-box;
     min-height: 100vh;
     align-items: center;
-    border: 2px solid rgba(173, 114, 114, 0.347);
+    border: 1px solid #888888;
     border-radius: 25px;
     margin-left: 50px;
     margin-right: 50px;
+    margin-top: 65px;
+    background-color: #0D0D0D;
+    background-image: repeating-linear-gradient(90deg,
+            transparent,
+            transparent calc(100% / 12 - 1px),
+            rgba(255, 255, 255, 0.03) calc(100% / 12 - 1px),
+            rgba(255, 255, 255, 0.03) calc(100% / 12));
 }
 
 /* Великий панельний блок з рамкою і заокругленням */
@@ -2627,11 +2745,11 @@ form {
 
 #section8 {
     width: 100%;
-    height: 1000px;
+    min-height: 1000px;
     background: rgb(0, 0, 0);
     text-align: center;
     line-height: 40px;
-
+    padding-bottom: 80px;
 }
 
 .portfolio-grid {
@@ -2642,7 +2760,38 @@ form {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
+}
 
+.section8-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 40px;
+    padding-bottom: 40px;
+    text-align: center;
+}
+
+.section8-header h2 {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.section8-header p {
+    color: #a0a0a0;
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.section8-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 60px;
 }
 
 /* Базові блоки */
@@ -2892,15 +3041,18 @@ form {
     position: absolute;
     top: 0;
     left: 0;
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(196, 196, 196, 0.9);
+    background: rgba(255, 255, 255, 0);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 11px;
+    font-size: 14px;
     letter-spacing: 2px;
     text-transform: uppercase;
     pointer-events: none;
@@ -2923,12 +3075,20 @@ form {
         width: 40px;
         height: 40px;
     }
+
     .portfolio-arrow svg {
         width: 20px;
         height: 20px;
     }
-    .portfolio-arrow-left { margin-right: 8px; }
-    .portfolio-arrow-right { margin-left: 8px; }
+
+    .portfolio-arrow-left {
+        margin-right: 8px;
+    }
+
+    .portfolio-arrow-right {
+        margin-left: 8px;
+    }
+
     .portfolio-slider-viewport::before,
     .portfolio-slider-viewport::after {
         width: 32px;
@@ -2940,7 +3100,7 @@ form {
     flex: 0 0 420px;
     /* do not grow or shrink, base width 420px */
     width: 420px;
-    height: 280px;
+    height: 380px;
     background: #555;
     border-radius: 20px;
     flex-shrink: 0;
@@ -3060,7 +3220,7 @@ ul.flex {
         width: 100%;
     }
 
-    header > div:last-of-type {
+    header>div:last-of-type {
         order: 2;
     }
 
@@ -3271,8 +3431,8 @@ ul.flex {
     }
 
     .p2,
-    .p2 + br + p,
-    .p2 + p {
+    .p2+br+p,
+    .p2+p {
         width: 100%;
         max-width: 760px;
     }
@@ -3301,8 +3461,8 @@ ul.flex {
     }
 
     .p2,
-    .p2 + br + p,
-    .p2 + p {
+    .p2+br+p,
+    .p2+p {
         font-size: 16px;
     }
 
@@ -3327,8 +3487,8 @@ ul.flex {
     }
 
     .p2,
-    .p2 + br + p,
-    .p2 + p {
+    .p2+br+p,
+    .p2+p {
         font-size: 15px;
     }
 
@@ -3359,8 +3519,8 @@ ul.flex {
     }
 
     .p2,
-    .p2 + br + p,
-    .p2 + p {
+    .p2+br+p,
+    .p2+p {
         font-size: 14px;
     }
 
@@ -3702,7 +3862,7 @@ ul.flex {
         object-position: center;
     }
 
-    .portfolio-item > p {
+    .portfolio-item>p {
         font-size: 1rem;
     }
 
@@ -4145,9 +4305,6 @@ ul.flex {
         font-size: 14px;
     }
 
-    .card img {
-        height: 200px;
-    }
 
     .subtitle {
         font-size: 11px;
@@ -4155,5 +4312,153 @@ ul.flex {
 
     .title {
         font-size: 15px;
+    }
+}
+
+/* --- Animated Horizontal Gallery (.big_slider) --- */
+/* --- Animated Horizontal Gallery (.big_slider) --- */
+.big_slider {
+    width: 100%;
+    background-color: #000;
+    padding: 80px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery-wrapper {
+    width: 100%;
+    max-width: 1400px;
+    background-color: #0d0d0d;
+    background-image: repeating-linear-gradient(90deg,
+            transparent,
+            transparent calc(100% / 12 - 1px),
+            rgba(255, 255, 255, 0.03) calc(100% / 12 - 1px),
+            rgba(255, 255, 255, 0.03) calc(100% / 12));
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 30px;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+}
+
+.gallery-heading {
+    color: #fff;
+    font-size: 42px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: -1px;
+    max-width: 800px;
+    margin-bottom: 50px;
+    line-height: 1.2;
+    padding: 0 20px;
+}
+
+.gallery-heading .text-muted {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+.gallery-container {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.gallery-track {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    width: max-content;
+    animation: scrollGallery 35s linear infinite;
+    will-change: transform;
+}
+
+.gallery-track:hover {
+    animation-play-state: paused;
+}
+
+.gallery-card {
+    position: relative;
+    height: 420px;
+    width: 90px;
+    border-radius: 24px;
+    overflow: hidden;
+    flex-shrink: 0;
+    transition: width 1.2s cubic-bezier(0.25, 1, 0.5, 1), filter 1.2s cubic-bezier(0.25, 1, 0.5, 1);
+    background-color: #1a1a1a;
+    filter: brightness(0.65);
+    cursor: pointer;
+}
+
+.gallery-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 20px;
+}
+
+.gallery-card.expanded {
+    width: 480px;
+    max-width: 60vw;
+    filter: brightness(1);
+}
+
+.gallery-card.expanded-medium {
+    width: 240px;
+    max-width: 35vw;
+    filter: brightness(0.85);
+}
+
+@keyframes scrollGallery {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(calc(-50% - 10px));
+    }
+}
+
+@media (max-width: 1024px) {
+    .gallery-heading {
+        font-size: 36px;
+        padding: 0 20px;
+        margin-bottom: 40px;
+    }
+
+    .gallery-card {
+        height: 300px;
+        width: 80px;
+    }
+
+    .gallery-card.expanded {
+        width: 45vw;
+    }
+
+    .gallery-card.expanded-medium {
+        width: 30vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery-heading {
+        font-size: 28px;
+    }
+
+    .gallery-card {
+        height: 250px;
+        width: 60px;
+    }
+
+    .gallery-card.expanded {
+        width: 60vw;
+    }
+
+    .gallery-card.expanded-medium {
+        width: 35vw;
     }
 }
