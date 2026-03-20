@@ -1,6 +1,12 @@
 const nodemailer = require('nodemailer');
 const fetch = require('node-fetch');
-
+console.log("ENV CHECK:", {
+  TG_BOT_TOKEN: !!process.env.TG_BOT_TOKEN,
+  TG_CHAT_ID: !!process.env.TG_CHAT_ID,
+  SMTP_HOST: !!process.env.SMTP_HOST,
+  SMTP_USER: !!process.env.SMTP_USER,
+  SMTP_PASS: !!process.env.SMTP_PASS
+});
 function escapeHtml(str) {
   if (!str && str !== 0) return '';
   return String(str)
